@@ -23,11 +23,33 @@ const URL_BASE = "https://swapi.dev/api";
 // .catch((err)=>{ console.log(err)})
 
 //ecmascript6 +
-const fetchingData = async () => {
+// const fetchingData = async () => {
+//     const res = await fetch(`${URL_BASE}/people`)
+//     const data = await res.json()
+//     console.log(data.results)
+
+// }
+//fetchingData()
+
+
+export async function fetchingData(){
     const res = await fetch(`${URL_BASE}/people`)
     const data = await res.json()
-    console.log(data.results)
-
+    console.log("next", data.next)
+    return data.results
 }
-//fetchingData()
-export default fetchingData
+
+export async function fetchingData2() { 
+    const res = await fetch(`${URL_BASE}/people/?page=2`)
+    const data = await res.json()
+    console.log("Data 2", data)
+    return data.results
+ }
+
+ 
+
+// export default async function fetchingDataNext(){
+//     const res = await fetch(`${URL_BASE}/people`)
+//     const data = await res.json()
+//     return data.results
+// }
