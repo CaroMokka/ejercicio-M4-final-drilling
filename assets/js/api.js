@@ -15,18 +15,19 @@ const URL_BASE = "https://swapi.dev/api";
 // xhr.send()
 
 //ecmascript6
-const HTMLResponse = document.querySelector("#app");
+// const HTMLResponse = document.querySelector("#app");
 
-fetch(`${URL_BASE}/people`)
-.then((response)=> response.json()) 
-.then((charactres)=> console.log(charactres.results))
-.catch((err)=>{ console.log(err)})
+// fetch(`${URL_BASE}/people`)
+// .then((response)=> response.json()) 
+// .then((charactres)=> console.log(charactres.results))
+// .catch((err)=>{ console.log(err)})
 
 //ecmascript6 +
-// const fetchingData = async () => {
-//     const res = await fetch(`${URL_BASE}/people`)
-//     const data = await res.json()
-//     console.log(data)
+const fetchingData = async () => {
+    const res = await fetch(`${URL_BASE}/people`)
+    const data = await res.json()
+    console.log(data.results)
 
-// }
-// fetchingData()
+}
+//fetchingData()
+export default fetchingData
